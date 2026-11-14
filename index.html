@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f8f6ee">
+  <meta name="description" content="24 道中文情景题，看看你在日常取舍里更看重什么。">
+  <title>心中刻度 · 价值观小测</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="quiz.js"></script>
+</head>
+<body>
+  <header class="top frame">
+    <a class="brand" href="./index.html"><span class="mark" aria-hidden="true">✳</span>心中刻度</a>
+    <button class="text-button" id="about-button" type="button">关于测试 <span aria-hidden="true">↗</span></button>
+  </header>
+  <main class="frame" id="main">
+    <section class="hero" id="home" aria-labelledby="home-title">
+      <div class="intro">
+        <div class="category">价值观小测</div>
+        <h1 id="home-title" tabindex="-1">选择背后，<br>什么对你<span>更重要？</span></h1>
+        <p class="intro-copy">当计划被打乱，或一个机会伴随着风险，你会怎么选？用 24 道日常情景题，看看你习惯把什么放在前面。</p>
+        <button type="button" class="primary" id="start"><span>开始测试</span><span aria-hidden="true">→</span></button>
+        <p class="facts"><span>24 道题</span><span>约 4 分钟</span><span>无需登录</span></p>
+      </div>
+      <figure class="figure">
+        <div class="figure-top"><span>价值观指南针</span><span aria-hidden="true">✦</span></div>
+        <canvas id="compass" aria-hidden="true"></canvas>
+        <figcaption><span class="legend-dot"></span>围绕六种价值倾向</figcaption>
+      </figure>
+    </section>
+    <section class="quiz" id="quiz" hidden aria-labelledby="question">
+      <div class="progress-meta"><span>正在作答</span><span id="progress-text"></span></div>
+      <progress id="progress" max="24" value="0" aria-label="已答题数"></progress>
+      <form class="question-card" id="quiz-form">
+        <fieldset>
+          <legend id="question" tabindex="-1"></legend>
+          <p class="hint" id="answer-hint">选一个最接近你平时想法的答案。</p>
+          <div id="answers" class="answers"></div>
+        </fieldset>
+        <div class="quiz-actions">
+          <button type="button" class="text-button" id="previous">← <span>上一题</span></button>
+          <button type="submit" class="primary" id="next" disabled></button>
+        </div>
+      </form>
+    </section>
+    <section class="report" id="report" hidden aria-labelledby="result-title">
+      <div class="category">我的价值观画像</div>
+      <h1 id="result-title" tabindex="-1"></h1>
+      <p id="result-copy"></p>
+      <p class="report-context">分数来自你在本次测试里的选择，满分 100。相同分数并列展示。</p>
+      <div class="score-list" id="scores"></div>
+      <div class="report-actions">
+        <button type="button" class="primary" id="share">复制测试链接 <span aria-hidden="true">↗</span></button>
+        <button type="button" class="text-button" id="restart">重新测试</button>
+      </div>
+      <p id="share-status" role="status"></p>
+    </section>
+  </main>
+  <footer class="footer frame"><span>心中刻度</span><span>答案保存在当前浏览器</span></footer>
+  <dialog id="about" aria-labelledby="about-title">
+    <form method="dialog"><button class="text-button close" aria-label="关闭" autofocus>×</button></form>
+    <h2 id="about-title">关于这份测试</h2>
+    <p>题目以中文日常情景原创编写，每个维度四题，取该维度四个答案的平均值并换算为 0–100 分。有些题以反向表述，按反向计分。</p>
+    <p>结果适合自我观察和聊天讨论。这份问卷未经标准化验证，也没有人群常模。</p>
+    <p class="sources">设计时参考了 <a href="https://www.europeansocialsurvey.org/sites/default/files/2023-06/ESS_Findings_HVS.pdf" target="_blank" rel="noopener">欧洲社会调查的 PVQ-21</a> 和 <a href="https://moralfoundations.org/questionnaires/" target="_blank" rel="noopener">道德基础问卷 MFQ-30</a>。</p>
+  </dialog>
+</body>
+</html>
